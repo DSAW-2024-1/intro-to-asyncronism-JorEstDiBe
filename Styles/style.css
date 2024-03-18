@@ -133,6 +133,7 @@
 input {
     background-color: white;
     height: 25px;
+    border-radius: 2px;
 }
 
 .Filters {
