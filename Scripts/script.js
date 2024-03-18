@@ -1,3 +1,15 @@
+window.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const data = await fetch('https://thesimpsonsquoteapi.glitch.me/quotes?count=5'); // Fetching 5 random quotes
+        const comments = await data.json();
+        console.log(comments);
+
+        display_characters(comments); // Display the random characters
+    } catch (error) {
+        console.error('Error fetching random quotes:', error);
+    }
+});
+
 const button = document.querySelector('#search_fetch');
 const button2 = document.querySelector('#search_by_quote');
 const button3 = document.querySelector('#search_by_character');
@@ -71,12 +83,8 @@ function display_characters(comments) {
         const quoteElement = document.createElement('p');
         quoteElement.textContent = `"${comment.quote}" - ${comment.character}`;
 
-        characterElement.style.backgroundColor = 'white';
-        imageElement.style.backgroundColor = 'white';
-        quoteElement.style.backgroundColor = 'white';
-
-        characterElement.appendChild(quoteElement);
         characterElement.appendChild(imageElement);
+        characterElement.appendChild(quoteElement);
         charactersDiv.appendChild(characterElement);
     });
 }
@@ -90,4 +98,3 @@ btn_hlp.addEventListener('mouseout', () => {
     display_inf.style.visibility = 'hidden';
     display_inf.style.opacity = 0;
 });
-
