@@ -1,10 +1,10 @@
-window.addEventListener('DOMContentLoaded', async () => {
+window.addEventListener('DOMContentLoaded', async () => { //find 5 random quotes/characters to display the moment the page loades, so it displays something since the begining
     try {
-        const data = await fetch('https://thesimpsonsquoteapi.glitch.me/quotes?count=5'); // Fetching 5 random quotes
+        const data = await fetch('https://thesimpsonsquoteapi.glitch.me/quotes?count=5'); 
         const comments = await data.json();
         console.log(comments);
 
-        display_characters(comments); // Display the random characters
+        display_characters(comments); 
     } catch (error) {
         console.error('Error fetching random quotes:', error);
     }
@@ -18,15 +18,18 @@ const btn_hlp = document.getElementById('info_bttn');
 const display_inf = document.getElementById('info_');
 
 button.addEventListener('click', async () => { //search for number of random quotes desired to be displayed
-    try {
+    try { // manejo de errores y excepciones en dado caso de que ocurra un error al momento de hacer "fecth" a la informacion que contiene el API
         const input_nmb = document.getElementById("count_filter").value;
         const data = await fetch('https://thesimpsonsquoteapi.glitch.me/quotes?count=' + input_nmb);
         const comments = await data.json();
         console.log(comments);
 
         display_characters(comments);
+
+        document.getElementById("count_filter").value = '';
     } catch (error) {
-        console.error('Error fetching quotes:', error);
+        console.error('Error fetching quotes:', error); //mensaje de error/fallo dirigido al 'desarrollador'
+        alert("¡An Error has been found! please try again later"); //mensaje de error/fallo dirigido al usuario
     }
 });
 
@@ -37,21 +40,27 @@ button2.addEventListener('click', async () => { //search for quote from a charac
         console.log(comments);
 
         display_characters(comments);
+
+        document.getElementById("count_filter").value = '';
     } catch (error) {
         console.error('Error fetching quotes:', error);
+        alert("¡An Error has been found! please try again later");
     }
 });
 
 button3.addEventListener('click', async () => { //search for character's name
     try {
         const input_char = document.getElementById("character_filter").value;
-        const data = await fetch('https://thesimpsonsquoteapi.glitch.me/quotes?character=' + input_char);
+        const data = await fetch('https://thesimpsonsquoteapi.glitch.me/quotes?character=' + input_char); //indentacion de aquel informacion que se usa para realizar una busqueda en especifico con respecto a las opcines de filtro establecidas
         const comments = await data.json();
-        console.log(comments);
+        console.log(comments); //modo de verificar que informacion y en que formato la API retorna la informacion
 
         display_characters(comments);
+
+        document.getElementById("character_filter").value = '';
     } catch (error) {
         console.error('Error fetching quotes:', error);
+        alert("¡An Error has been found! please try again later");
     }
 });
 
@@ -64,8 +73,12 @@ button_searchByAll.addEventListener('click', async () => { //search a certain nu
         console.log(comments);
 
         display_characters(comments);
+
+        document.getElementById("count_filter").value = '';
+        document.getElementById("character_filter").value = ''; //Limpiar el contenido de los Inputs
     } catch (error) {
         console.error('Error fetching quotes:', error);
+        alert("¡An Error has been found! please try again later");
     }
 });
 
@@ -89,7 +102,7 @@ function display_characters(comments) {
     });
 }
 
-btn_hlp.addEventListener('mouseover', () => {
+btn_hlp.addEventListener('mouseover', () => {  // allo
     display_inf.style.visibility = 'visible';
     display_inf.style.opacity = 1;
 });
