@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Simpsons API communication</title>
+    
+    <link rel="stylesheet" type="text/css" href="./Styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Outfit&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="Logo">
+            <h1> <img src="./Assets/The Simpsons Tittle.png" alt="The Simpsons Tittle"> </h1> 
+            <img src="./Assets/The Simpsons Logo.png" alt="The Simpsons LogoType"> 
+        </div>
+
+        <div class="Filters">
+            <input type="text" id="character_filter" placeholder="Insert character's name">
+            <button id="search_by_character"> <img src="./Assets/user.png" alt="Character"></button>
+            <input type="text" id="count_filter" placeholder="Insert Number of quotes">
+            <button id="search_fetch"> <img src="./Assets/quote.png" alt="quote"></button>
+            
+            <button id="search_all"> <img src="./Assets/search.png" alt="search all"></button>
+            <button id="search_by_quote"> <img src="./Assets/dices.png" alt="Random"></button>
+
+            <button id="info_bttn"> <img src="./Assets/help.png" alt="help"></button>
+            
+            <div id="info_" class="info_">
+                <p>To search properly:</p>
+                <hr style="width: 100%; border: 0.5px solid #fff;">
+                <p>This button allows you to search by a character's name </p>
+                <img src="./Assets/user.png" alt="character button">
+                <p>This button allows you to search by number of random quotes </p>
+                <img src="./Assets/quote.png" alt="quote button">
+                <p>This button allows you to search a certain number of quotes from a character </p>
+                <img src="./Assets/search.png" alt="search all button">
+                <p>This button allows you to search a random quote/character </p>
+                <img src="./Assets/dices.png" alt="random button">
+            </div>
+        </div>
+
+        <div id="characters"></div>
+
+    </div>
+    <script src="./Scripts/script.js"></script>
+</body>
+
+    <div class="attribution">
+        <p>Coded by Jorge Esteban Diaz Bernal.</p>
+    </div>
+
+</html>
