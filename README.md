@@ -3,6 +3,9 @@
 ## Introducción al Asíncronismo
 Jorge Esteban Diaz Bernal
 
+## GitHub Pages
+Link: https://dsaw-2024-1.github.io/intro-to-asyncronism-JorEstDiBe/ 
+
 
 ## Funcionalidades
 
@@ -26,5 +29,3 @@ Jorge Esteban Diaz Bernal
 | Calidad del código     | 1.5     |
 | Funcionalidad      | 1.5      |
 
-## GitHub Pages
-Link: 
